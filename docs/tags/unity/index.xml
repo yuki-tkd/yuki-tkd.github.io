@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unity on Synthesized Reality</title>
+    <link>https://yuki-tkd.github.io/tags/unity/</link>
+    <description>Recent content in Unity on Synthesized Reality</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Sun, 12 Mar 2023 07:24:17 +0000</lastBuildDate><atom:link href="https://yuki-tkd.github.io/tags/unity/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Netcode for GameObjectsで大容量データを送受信する</title>
+      <link>https://yuki-tkd.github.io/posts/hello-world/</link>
+      <pubDate>Sun, 12 Mar 2023 07:24:17 +0000</pubDate>
+      
+      <guid>https://yuki-tkd.github.io/posts/hello-world/</guid>
+      <description>背景 Netcode for GameObjects(NGO) の Custom messages で2KB程度のメッセージを送ろうとしたら、Reading past the end of the buffer というエラーで送信できなかった。
+原因 NGOは com.unity.transport 上に構築した UnityTransport を利用してクライアント・サーバ間の通信を行っている。どちらもUnityTransportと呼ばれていて分かりづらいが、前者はUnity本体の機能で、後者はNGOの機能。
+ベースとなる com.unity.transport がUDPで通信しているため、MTU(1500 Bytes程度が一般的)を超えるPayloadを1つのPacketで送受信できないのが問題。
+対策 Fragmentation という Payloadを複数のPacketに分割送信する機能 を利用する。
+NGOのチュートリアルには書かれていないが、CustomMessagingManager.SendNamedMessage() の引数に NetworkDelivery というQoSを指定する項目が存在する。
+指定可能な NetworkDelibery は、ここ から選択可能。
+Realiable / Unreliable = メッセージの到着保証を行うかどうか Sequenced = メッセージの到着順保証を行うかどうか Fragmented = メッセージの分割送受信をサポートするかどうか 今回はメッセージを分割送信したいので、 ReliableFragmentedSequenced を選べば良い。
+余談 RPC Custom Message ではなく RPC にもQoSを設定する項目はあるが、v1.2.0 の時点では Fragmentationに対応していない ようなので、RPC用途であったとしてもMTUを超えるデータ量がある場合は CustomMessageを利用することになりそう。
+通信量制御 こちらの記事 に詳述されている通り、通信量が過剰になった際の対処は入っていない。大量にデータを送りすぎると NetworkManagerのQueueが肥大化してGCにKillされてしまうので注意。</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,34 @@
+theme = "paper"
+baseURL = 'https://yuki-tkd.github.io/'
+languageCode = 'ja-jp'
+title = 'Synthesized Reality'
+
+publishDir = "docs"
+
+[taxonomies]
+  tag = "tags"
+  
+sectionPagesMenu = "main"
+[menu]
+[[menu.main]]
+  name = 'Profile'
+  url = '/profile'
+  weight = -110
+[[menu.main]]
+  name = 'Posts'
+  url = '/posts'
+  weight = -100
+
+[params]
+  # color style
+  color = 'light'
+
+  # header social icons
+  twitter = 'yuki_tkd'
+  github = 'yuki-tkd'
+
+  # profile
+  name = 'yukitkd'
+  
+  # misc
+  disableHLJS = true
