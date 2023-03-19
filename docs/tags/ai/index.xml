@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Synthesized Reality</title>
-    <link>https://yuki-tkd.github.io/</link>
-    <description>Recent content on Synthesized Reality</description>
+    <title>AI on Synthesized Reality</title>
+    <link>https://yuki-tkd.github.io/tags/ai/</link>
+    <description>Recent content in AI on Synthesized Reality</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 19 Mar 2023 11:46:03 +0000</lastBuildDate><atom:link href="https://yuki-tkd.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 Mar 2023 11:46:03 +0000</lastBuildDate><atom:link href="https://yuki-tkd.github.io/tags/ai/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ChatGPTにステレオ画像からDepth推定するコードを書いてもらう</title>
       <link>https://yuki-tkd.github.io/posts/chat_gpt_depth/</link>
@@ -28,33 +28,6 @@ ChatGPTにコードを書いて貰うのは初なので、いきなりダイレ�
 したがって、下記のような仕事は真っ先にChatGPTで代替されるだろう、という危機感を感じた。
 ペアプロのドライバー役 実際、ChatGPTにコードを書いてもらっているときの感覚はナビゲーターそのものだった。 リファクタリング テストの生成 一方で、&amp;ldquo;何を実現したいか&amp;rdquo; という部分が人間依存のものである以上、&amp;ldquo;指示出し&amp;rdquo; と &amp;ldquo;結果確認&amp;rdquo; は、やっぱり人間が行うしかないのだろうなと感じる。
 そして、人間への指示出しと同様に、その作業は誰にでも行えるものではないのだろう。 プロンプトエンジニアは職業として成立するのか？ 特定の学習済モデルだけに人生をかけて大丈夫なのか？ なんて思っていたが、実はプログラマーよりも本質的な仕事なのかも知れない。</description>
-    </item>
-    
-    <item>
-      <title>Profile</title>
-      <link>https://yuki-tkd.github.io/profile/</link>
-      <pubDate>Sun, 12 Mar 2023 07:57:42 +0000</pubDate>
-      
-      <guid>https://yuki-tkd.github.io/profile/</guid>
-      <description>yukitkdが興味があるAR関連技術のメモを書く予定
-Computer Vision 3D Reconstruction, Visual localization Parallelization GPGPU, SIMD Application Unity </description>
-    </item>
-    
-    <item>
-      <title>Netcode for GameObjectsで大容量データを送受信する</title>
-      <link>https://yuki-tkd.github.io/posts/hello-world/</link>
-      <pubDate>Sun, 12 Mar 2023 07:24:17 +0000</pubDate>
-      
-      <guid>https://yuki-tkd.github.io/posts/hello-world/</guid>
-      <description>背景 Netcode for GameObjects(NGO) の Custom messages で2KB程度のメッセージを送ろうとしたら、Reading past the end of the buffer というエラーで送信できなかった。
-原因 NGOは com.unity.transport 上に構築した UnityTransport を利用してクライアント・サーバ間の通信を行っている。どちらもUnityTransportと呼ばれていて分かりづらいが、前者はUnity本体の機能で、後者はNGOの機能。
-ベースとなる com.unity.transport がUDPで通信しているため、MTU(1500 Bytes程度が一般的)を超えるPayloadを1つのPacketで送受信できないのが問題。
-対策 Fragmentation という Payloadを複数のPacketに分割送信する機能 を利用する。
-NGOのチュートリアルには書かれていないが、CustomMessagingManager.SendNamedMessage() の引数に NetworkDelivery というQoSを指定する項目が存在する。
-指定可能な NetworkDelibery は、ここ から選択可能。
-Realiable / Unreliable = メッセージの到着保証を行うかどうか Sequenced = メッセージの到着順保証を行うかどうか Fragmented = メッセージの分割送受信をサポートするかどうか 今回はメッセージを分割送信したいので、 ReliableFragmentedSequenced を選べば良い。
-余談 RPC Custom Message ではなく RPC にもQoSを設定する項目はあるが、v1.2.0 の時点では Fragmentationに対応していない ようなので、RPC用途であったとしてもMTUを超えるデータ量がある場合は CustomMessageを利用することになりそう。
-通信量制御 こちらの記事 に詳述されている通り、通信量が過剰になった際の対処は入っていない。大量にデータを送りすぎると NetworkManagerのQueueが肥大化してGCにKillされてしまうので注意。</description>
     </item>
     
   </channel>

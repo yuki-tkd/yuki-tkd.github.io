@@ -28,7 +28,7 @@ sectionPagesMenu = "main"
   github = 'yuki-tkd'
 
   # profile
-  name = 'yukitkd'
+  # name = 'yukitkd'
   
   # misc
   disableHLJS = true
