@@ -15,7 +15,7 @@
       <guid>https://yuki-tkd.github.io/posts/chat_gpt_depth/</guid>
       <description>背景 どうやらChatGPTが凄いという話をよく聞くので、自分でも凄さを体験してみた。
 やったこと 無料版のChatGPT (GPT3.5) を利用して、OpenCVを使ったステレオ画像からのDepth推定を行ってもらった。データセットは、UTIAS long-term localization and mapping dataset の C00005を利用させて頂く。
-ChatGPTにコードを書いて貰うのは初なので、いきなりダイレクトに聞いてみた。
+いきなりダイレクトに聞いてみた。
 凄い！！ 一発でそれっぽいコードが生成された。
 でも、これはそのまま実行できない。なぜなら、ステレオカメラの内部・外部パラメータのキャリブレーションファイル calibration_file.yaml が存在しておらず、テキスト形式で与えられた内部パラメータと外部パラメータ(基線長)しかないから。
 そこで、その点を指摘しつつ、テキスト形式のままパラメータを与えてみた。

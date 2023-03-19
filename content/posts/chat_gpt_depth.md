@@ -14,7 +14,7 @@ tags: [Python, CV, AI]
 
 無料版のChatGPT (GPT3.5) を利用して、OpenCVを使ったステレオ画像からのDepth推定を行ってもらった。データセットは、`UTIAS long-term localization and mapping dataset` の `C00005`を利用させて頂く。
 
-ChatGPTにコードを書いて貰うのは初なので、いきなりダイレクトに聞いてみた。
+いきなりダイレクトに聞いてみた。
 
 ![step1](/20230319/step1.png)
 
